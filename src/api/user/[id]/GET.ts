@@ -9,9 +9,8 @@ export const Param = z.object({
 export const Modifier: RouteModifier = (r) => (r ? { ...r, tags: ['User'] } : r);
 
 export default async function (input: z.infer<typeof Param>): Promise<z.infer<typeof Output>> {
-    const user = await prisma.user.getUser(Number(input.id));
-    if (!user) {
-        throw new Error('User not found');
-    }
-    return user;
+	const user = await prisma.user.getUser(Number(input.id));
+	if (!user) throw new Error('User not found');
+
+	return user;
 }
