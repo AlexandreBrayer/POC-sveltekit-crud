@@ -6,6 +6,8 @@ export const Output = z.object({
 	users: z.array(UserSchema)
 })
 
+export type UserListOutputType = z.infer<typeof Output>;
+
 export const Modifier: RouteModifier = (r) => (r ? { ...r, tags: ['User'] } : r);
 
 export default async function (): Promise<z.infer<typeof Output>> {

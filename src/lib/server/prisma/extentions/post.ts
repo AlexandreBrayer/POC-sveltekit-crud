@@ -5,8 +5,15 @@ export function postExtentions(prisma: PrismaClient) {
 		name: 'post-extentions',
 		model: {
 			post: {
-				async getAllPosts(): Promise<Post[]> {
-					return await prisma.post.findMany();
+				async getAllPosts() {
+					return await prisma.post.findMany({
+						include: {
+							author: true
+						},
+						orderBy: {
+							createdAt: 'desc'
+						}
+					});
 				},
 				async createPost(title: string, content: string, authorId: number): Promise<Post> {
 					return await prisma.post.create({
