@@ -25,7 +25,6 @@
 		const posts: PostListOutputType = await fetch('/api/post').then((res) => res.json());
 		data.posts = posts.posts;
 	}
-		
 </script>
 
 <div class="flex flex-wrap gap-2 justify-center">
@@ -79,7 +78,9 @@
 		<GradientButton shadow color="purpleToPink" on:click={() => postForm.requestSubmit()}>
 			Envoyer
 		</GradientButton>
-		<GradientButton shadow color="pinkToOrange">Annuler</GradientButton>
+		<GradientButton on:click={() => (postModalOpen = false)} shadow color="pinkToOrange">
+			Annuler
+		</GradientButton>
 	</svelte:fragment>
 </Modal>
 <GradientButton
