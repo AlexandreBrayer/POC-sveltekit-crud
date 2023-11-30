@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from './post/$types';
 import type { PostListOutputType } from '$api/post/GET';
 import type { UserListOutputType } from '$api/user/GET';
 import { superValidate } from 'sveltekit-superforms/server';

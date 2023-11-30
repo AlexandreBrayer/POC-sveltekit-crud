@@ -13,7 +13,6 @@
 		</NavBrand>
 		<NavHamburger />
 		<NavUl>
-			<NavLi href="/post">Posts</NavLi>
 			<NavLi href="/docs">Docs</NavLi>
       <NavLi href="https://github.com/AlexandreBrayer/POC-sveltekit-crud"><GithubSolid/></NavLi>
       <NavLi href="/refs">Lib & Refs</NavLi>
