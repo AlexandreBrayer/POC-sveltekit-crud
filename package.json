@@ -13,7 +13,8 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"postinstall": "prisma generate --schema=./src/lib/server/prisma/schema.prisma"
+		"postinstall": "prisma generate --schema=./src/lib/server/prisma/schema.prisma",
+		"mockData": "npx --yes tsx ./src/lib/mock/mockMyApp.ts"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -46,10 +47,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@anatine/zod-mock": "^3.13.3",
+		"@faker-js/faker": "^8.3.1",
 		"@prisma/client": "5.6.0",
 		"moment": "^2.29.4",
 		"prisma": "^5.6.0",
 		"swagger-ui": "^5.10.3",
+		"ts-node": "^10.9.1",
 		"zod-prisma-types": "^3.1.6"
 	}
 }
